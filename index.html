@@ -3,58 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio</title>
+
+<meta property="og:title" content="Vaishnavi Portfolio">
+<meta property="og:description" content="Engineering Student | Software Development Enthusiast">
+<meta property="og:image" content="https://vaishnavi981299.github.io/portfolio-website/preview.png">
+<meta property="og:url" content="https://vaishnavi981299.github.io/portfolio-website/">
+<meta property="og:type" content="website">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
+
 body{
     font-family:'Poppins', sans-serif;
-    background: linear-gradient(to right, #eef7f2, #f8fbf9);
+    background: linear-gradient(270deg, #020617, #0f172a, #1e293b, #020617);
+    background-size: 600% 600%;
+    animation: gradientMove 8s ease infinite;
+    color:#f8fafc;
 }
+
+=
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
 
 .navbar{
-    background-color:#2f5d50 !important;
+    background: rgba(2,6,23,0.75)!important;
+    backdrop-filter: blur(16px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
+
+.nav-link{
+    color:#e5e7eb !important;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#22c55e !important;
+}
+
 
 .hero{
-    background: linear-gradient(135deg,#6ba292,#9fcfb8);
+    background: radial-gradient(circle at top,#1e293b,#020617);
     color:white;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.section-light{
-    background-color:#f6faf8;
+
+h1,h2,h5{
+    color:#ffffff;
+    letter-spacing:0.5px;
 }
+.table{
+    background: rgba(30,41,59,0.9) !important;
+    color:#f8fafc !important;
+    border-radius:15px;
+    overflow:hidden;
+    backdrop-filter: blur(10px);
+}
+
+
+.table thead{
+    background: rgba(34,197,94,0.15);
+    color:#22c55e;
+}
+
+
+.table tbody tr{
+    border-color: rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+
+.table tbody tr:hover{
+    background: rgba(34,197,94,0.08);
+}
+
+
+.table-success{
+    background: transparent !important;
+    color: inherit !important;
+}
+
+
+h2::after{
+    content:"";
+    width:50px;
+    height:2px;
+    background:#22c55e;
+    display:block;
+    margin-top:6px;
+}
+
+
+p{
+    color:#e2e8f0;
+    line-height:1.7;
+}
+
 
 .card{
-    border:none;
-    border-radius:12px;
+    background: rgba(30,41,59,0.9);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    backdrop-filter: blur(18px);
+    color:#f8fafc;
+    transition: all 0.3s ease;
 }
 
-.btn-custom{
-    background-color:#4a7c59;
-    color:white;
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    border-color: rgba(34,197,94,0.4);
 }
+
+
+.btn-custom{
+    background: linear-gradient(135deg,#22c55e,#16a34a);
+    border:none;
+    color:white;
+    border-radius:999px;
+    padding:8px 20px;
+    transition:0.3s;
+}
+
 .btn-custom:hover{
-    background-color:#3b6549;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(34,197,94,0.4);
+}
+
+
+.btn-outline-success{
+    border-radius:999px;
+    border:1px solid rgba(34,197,94,0.6);
+    color:#22c55e;
+    transition:0.3s;
+}
+
+.btn-outline-success:hover{
+    background:#22c55e;
+    color:white;
+    box-shadow:0 8px 20px rgba(34,197,94,0.3);
+}
+
+.progress{
+    background:#020617;
+    height:8px;
+    border-radius:10px;
 }
 
 .progress-bar{
-    background-color:#6ba292;
+    background: linear-gradient(90deg,#22c55e,#4ade80);
 }
+
+
+.custom-progress{
+    height:10px;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    border-radius:20px;
+    transition:width 1.2s ease;
+}
+
+.python{width:85%; background:linear-gradient(90deg,#22c55e,#4ade80);}
+.java{width:75%; background:linear-gradient(90deg,#3b82f6,#60a5fa);}
+.c{width:80%; background:linear-gradient(90deg,#f59e0b,#fbbf24);}
+.web{width:85%; background:linear-gradient(90deg,#ec4899,#f472b6);}
+.dsa{width:75%; background:linear-gradient(90deg,#8b5cf6,#a78bfa);}
+
+
+.section-light{
+    background:#020617;
+}
+
+
+.modal-content{
+    background: rgba(15,23,42,0.95);
+    color:white;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+}
+
+
+#certifications .card{
+    transition:0.3s;
+}
+
+#certifications .card:hover{
+    transform:translateY(-5px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+#certifications img{
+    background:white;
+    padding:6px;
+    border-radius:10px;
+}
+
 
 footer{
-    background:#2f5d50;
-    color:white;
+    background:#020617;
+    color:#94a3b8;
+}
+
+
+#typing{
+    font-size:2.5rem;
+    font-weight:600;
+    color:#22c55e;
+    text-shadow:0 0 12px rgba(34,197,94,0.6);
+}
+
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1;}
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+table{
+    background: rgba(30,41,59,0.95) !important;
+    color:#f8fafc !important;
+}
+
+thead{
+    background: rgba(34,197,94,0.15) !important;
+    color:#22c55e !important;
+}
+
+tbody tr{
+    border-color: rgba(255,255,255,0.05) !important;
+}
+
+tbody tr:hover{
+    background: rgba(34,197,94,0.08) !important;
+}
+
+
+#education table{
+    background: rgba(15,23,42,0.95) !important;
+    color:#f8fafc !important;
+    border-radius:16px;
+    overflow:hidden;
+    backdrop-filter: blur(10px);
+}
+
+
+#education thead{
+    background: rgba(34,197,94,0.12) !important;
+    color:#22c55e !important;
+}
+
+
+#education tbody tr{
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
+}
+
+
+#education tbody tr:hover{
+    background: rgba(34,197,94,0.08);
+}
+
+
+#education th,
+#education td{
+    background: transparent !important;
+    color: inherit !important;
+    padding:14px;
+}
+.badge{
+    padding:8px 14px;
+    font-size:13px;
+    border-radius:999px;
+    background: rgba(255,255,255,0.08) !important;
+    color:#e5e7eb;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.badge:hover{
+    background: rgba(34,197,94,0.2) !important;
+    color:#22c55e;
+}
+
+.skill-pill{
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13px;
+    color:#e5e7eb;
+    background: rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor:pointer;
+}
+
+
+.skill-pill:hover{
+    transform: translateY(-3px) scale(1.05);
+    color:#22c55e;
+    border-color:#22c55e;
+    box-shadow: 0 8px 20px rgba(34,197,94,0.25);
+}
+
+
+.skill-pill:active{
+    transform: scale(0.95);
 }
 </style>
-
 </head>
 
 <body>
-
+<div class="bg-animation">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
 <div class="container">
 <a class="navbar-brand fw-bold">Portfolio</a>
@@ -88,12 +370,15 @@ footer{
 <div class="card shadow p-4">
 <h2>About</h2>
 <p>
-I am a second-year B.E (IT) student at Vasavi College of Engineering. Over time, I developed an interest in problem solving and programming.
-    
-I have worked on a few projects that helped me explore concepts like data structures, object-oriented programming, and basic application development. These experiences made me more comfortable with coding and improved my logical thinking.
+<p>
+I am a second-year B.E (Information Technology) student at Vasavi College of Engineering with a strong interest in building practical and meaningful software solutions. I enjoy understanding concepts deeply and applying them through projects rather than just learning them theoretically.
 
-Currently, I am focusing on strengthening my fundamentals in DSA and writing cleaner, more efficient code. I prefer learning by doing, experimenting, and improving gradually rather than rushing through concepts.
+I am an active member of the DSAC Coding Club, where I regularly engage in problem-solving and improve my understanding of data structures and algorithms. I also enjoy participating in hackathons and coding contests, as they challenge me to think quickly, work under pressure, and come up with creative solutions.
 
+Apart from coding, I am also working as a teaching volunteer, which has helped me develop communication skills and the ability to explain concepts clearly to others. This experience has made me more patient and confident while working in teams.
+
+Currently, I am focusing on strengthening my fundamentals in DSA and exploring full-stack development. I believe in consistent learning, experimenting with ideas, and improving step by step to become a better developer.
+</p>
 </p>
 </div>
 </div>
@@ -104,7 +389,6 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 <h2 class="text-center mb-4">Education</h2>
 
 <table class="table table-hover text-center shadow">
-<thead class="table-success">
 <tr>
 <th>Qualification</th>
 <th>Institution</th>
@@ -151,6 +435,7 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 <div class="card shadow p-3">
 <h5>LumosPath</h5>
 <p>Women's Safety Companion</p>
+<button class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#lumosModal">View More</button>
 </div>
 </div>
 
@@ -158,6 +443,7 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 <div class="card shadow p-3">
 <h5>Journeo</h5>
 <p>Tourist Guide using Data Structures</p>
+<button class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#journeoModal">View More</button>
 </div>
 </div>
 
@@ -165,6 +451,7 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 <div class="card shadow p-3">
 <h5>Placement System</h5>
 <p>Java + GUI</p>
+<button class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#placementModal">View More</button>
 </div>
 </div>
 
@@ -172,6 +459,7 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 <div class="card shadow p-3">
 <h5>SnakeByte</h5>
 <p>Python Game</p>
+<button class="btn btn-outline-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#snakeModal">View More</button>
 </div>
 </div>
 
@@ -181,54 +469,173 @@ Currently, I am focusing on strengthening my fundamentals in DSA and writing cle
 
 <section id="skills" class="py-5 section-light">
 <div class="container">
-<h2 class="text-center mb-4">Skills</h2>
+<h2 class="text-center mb-5">Skills</h2>
 
-<p>Python</p>
-<div class="progress mb-3">
-<div class="progress-bar" style="width:85%"></div>
+<div class="card p-4">
+
+
+<div class="mb-4">
+<div class="d-flex justify-content-between">
+<span>Python</span>
+<span>85%</span>
+</div>
+<div class="progress custom-progress">
+<div class="progress-bar python"></div>
+</div>
 </div>
 
-<p>Java</p>
-<div class="progress mb-3">
-<div class="progress-bar" style="width:75%"></div>
+
+<div class="mb-4">
+<div class="d-flex justify-content-between">
+<span>Java</span>
+<span>75%</span>
+</div>
+<div class="progress custom-progress">
+<div class="progress-bar java"></div>
+</div>
 </div>
 
-<p>DSA</p>
-<div class="progress mb-3">
-<div class="progress-bar" style="width:80%"></div>
+
+<div class="mb-4">
+<div class="d-flex justify-content-between">
+<span>C</span>
+<span>80%</span>
+</div>
+<div class="progress custom-progress">
+<div class="progress-bar c"></div>
+</div>
 </div>
 
+
+<div class="mb-4">
+<div class="d-flex justify-content-between">
+<span>HTML / CSS</span>
+<span>85%</span>
+</div>
+<div class="progress custom-progress">
+<div class="progress-bar web"></div>
+</div>
+</div>
+
+
+<div class="mb-2">
+<div class="d-flex justify-content-between">
+<span>DSA</span>
+<span>75%</span>
+</div>
+<div class="progress custom-progress">
+<div class="progress-bar dsa"></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<div class="container">
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+<div class="card p-4 mt-4 text-center">
+
+<h5>Non-Technical Skills</h5>
+
+<div class="mt-3 d-flex flex-wrap justify-content-center gap-2">
+
+<span class="skill-pill">Teamwork</span>
+<span class="skill-pill">Problem Solving</span>
+<span class="skill-pill">Time Management</span>
+<span class="skill-pill">Adaptability</span>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<section class="py-5">
+<div class="container">
+<h2>Currently Learning</h2>
+<ul>
+<li>Advanced Data Structures</li>
+<li>AI/ML Basics</li>
+<li>Web Development</li>
+</ul>
 </div>
 </section>
 
 <section id="certifications" class="py-5">
 <div class="container">
-<h2 class="text-center mb-4">Certifications</h2>
+<h2 class="text-center mb-5">Certifications</h2>
 
-<div class="row g-3">
+<div class="row g-4">
 
-<div class="col-md-6">
-<div class="card shadow p-3">
-NPTEL - Data Structures in Python
-</div>
-</div>
 
 <div class="col-md-6">
-<div class="card shadow p-3">
-Oracle AI Foundations Associate
+<div class="card p-3 h-100 d-flex flex-row align-items-center gap-3">
+<img src="https://cdn-1.webcatalog.io/catalog/nptel/nptel-icon-filled-256.webp?v=1714777011674" width="60">
+<div>
+<h6 class="mb-1">NPTEL</h6>
+<p class="mb-1">Data Structures in Python</p>
 </div>
-</div>
-
-<div class="col-md-6">
-<div class="card shadow p-3">
-Cisco Networks Certified
 </div>
 </div>
 
+
 <div class="col-md-6">
-<div class="card shadow p-3">
-IIT Hyderabad Certified Volunteer
+<div class="card p-3 h-100 d-flex flex-row align-items-center gap-3">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" width="60">
+<div>
+<h6 class="mb-1">Oracle</h6>
+<p class="mb-1">AI Foundations Associate</p>
 </div>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="card p-3 h-100 d-flex flex-row align-items-center gap-3">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" width="60">
+<div>
+<h6 class="mb-1">Cisco NetAcad</h6>
+<p class="mb-1">Networking Certification</p>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="card p-3 h-100 d-flex flex-row align-items-center gap-3">
+<img src="https://www.iith.ac.in/assets/images/logo.png" width="60">
+<div>
+<h6 class="mb-1">IIT Hyderabad</h6>
+<p class="mb-1">Akshardaan Volunteer Certification</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<section class="py-5 text-center">
+<div class="container">
+<h2 class="mb-4">Highlights</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<h3>5+</h3>
+<p>Projects Built</p>
+</div>
+
+<div class="col-md-4">
+<h3>200+</h3>
+<p>DSA Problems Solved</p>
+</div>
+
+<div class="col-md-4">
+<h3>3+</h3>
+<p>Technologies Learned</p>
 </div>
 
 </div>
@@ -259,11 +666,19 @@ Submitted successfully!
 </div>
 
 </form>
+<div class="text-center mt-3">
+  <a href="https://github.com/vaishnavi981299" class="btn btn-dark btn-sm me-2">GitHub</a>
+  <a href="https://www.linkedin.com/in/vaishnavi-medicharla-107ba7331/#" class="btn btn-primary btn-sm">LinkedIn</a>
+</div>
 
 </div>
 </div>
 </div>
 </section>
+<p class="text-center mt-3">
+📍 Hyderabad, India  
+<br>📧 vaishnavimedicharla9@gmail.com  
+</p>
 
 <footer class="text-center py-3">
 © 2026 Vaishnavi Medicharla
@@ -282,6 +697,85 @@ document.getElementById("msg").classList.remove("d-none");
 return false;
 }
 </script>
+<div class="modal fade" id="lumosModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
 
+<div class="modal-header">
+<h5 class="modal-title">LumosPath</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<img src="lumos.png" class="img-fluid mb-3">
+<p>
+LumosPath is a women’s safety companion application designed to provide route safety insights and quick emergency support. It highlights safer paths and integrates alert features for better real-time assistance.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="modal fade" id="snakeModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title">SnakeByte</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<img src="snake.png" class="img-fluid mb-3">
+<p>
+SnakeByte is a classic snake game developed to understand real-time movement logic, collision detection, and user input handling. It strengthened programming fundamentals and logical thinking.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="modal fade" id="placementModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title">Placement Management System</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<img src="placement.png" class="img-fluid mb-3">
+<p>
+The Placement Management System is a Java-based application integrated with GUI that manages student and company data efficiently. It uses object-oriented concepts and improves structured application design.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="modal fade" id="journeoModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+<div class="modal-header">
+<h5 class="modal-title">Journeo</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<img src="journeo.png" class="img-fluid mb-3">
+<p>
+Journeo is a console-based tourist guide application built using data structures. It suggests destinations based on user interests and demonstrates efficient data handling and logical structuring.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:800, once:true});
+</script>
 </body>
 </html>
